@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 16 Apr 2026 pada 02.51
--- Versi server: 8.0.30
--- Versi PHP: 8.3.17
+-- Generation Time: Apr 16, 2026 at 01:59 PM
+-- Server version: 8.0.30
+-- PHP Version: 8.3.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kegiatan`
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `nama_lengkap` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama_lengkap`) VALUES
+(2, 'admin', '$2y$10$MEckIFEpbIT7YV2JhQosSuR9/bE5GA8w4RDq.cOf0RPWE1WTlN66S', 'ADMIN');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kegiatan`
 --
 
 CREATE TABLE `kegiatan` (
@@ -36,7 +56,7 @@ CREATE TABLE `kegiatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data untuk tabel `kegiatan`
+-- Dumping data for table `kegiatan`
 --
 
 INSERT INTO `kegiatan` (`id_kegiatan`, `judul_kegiatan`, `deskripsi`, `tanggal_kegiatan`, `gambar`) VALUES
@@ -51,17 +71,29 @@ INSERT INTO `kegiatan` (`id_kegiatan`, `judul_kegiatan`, `deskripsi`, `tanggal_k
 --
 
 --
--- Indeks untuk tabel `kegiatan`
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indexes for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
   ADD PRIMARY KEY (`id_kegiatan`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `kegiatan`
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
   MODIFY `id_kegiatan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
